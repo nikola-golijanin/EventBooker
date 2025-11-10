@@ -1,13 +1,14 @@
 package main
 
 import (
+	"homelab/event-booker/db"
 	"homelab/event-booker/models"
 	"net/http"
-
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+	db.InitDB()
 	server := gin.Default()
 
 	server.GET("/api/events", getEvents)
@@ -16,7 +17,10 @@ func main() {
 }
 
 func getEvents(context *gin.Context) {
-	events := models.GetAllEvents()
+	events, err := models.GetAllEvents()
+	if err != nil {
+		context.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+	}
 	context.JSON(http.StatusOK, events)
 }
 
@@ -30,6 +34,11 @@ func createEvent(context *gin.Context) {
 	}
 	event.ID = 1
 	event.UserID = 1
-	event.Save()
+	err = event.Save()
+	if err != nil {
+		context.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
 	context.JSON(http.StatusCreated, event)
 }
