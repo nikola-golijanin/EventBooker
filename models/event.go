@@ -16,7 +16,7 @@ type Event struct {
 
 func (e *Event) Save() error {
 	query := `
-	INSERT INTO events (name, description, location, dateTime, userID)
+	INSERT INTO events (name, description, location, dateTime, user_id)
 	VALUES (?, ?, ?, ?, ?)`
 
 	sql, err := db.DB.Prepare(query)
