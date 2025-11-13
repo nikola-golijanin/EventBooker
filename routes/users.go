@@ -20,5 +20,5 @@ func signup(context *gin.Context) {
 		return
 	}
 
-	context.JSON(http.StatusCreated, user)
+	context.JSON(http.StatusCreated, gin.H{"message": "User created successfully", "user_id": user.ID})
 }
