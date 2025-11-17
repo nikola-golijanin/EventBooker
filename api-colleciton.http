@@ -7,7 +7,7 @@ POST {{baseUrl}}/api/signup
 Content-Type: {{contentType}}
 
 {
-  "email": "user@example.com",
+  "email": "user2@example.com",
   "password": "securePassword123"
 }
 
@@ -16,7 +16,7 @@ POST {{baseUrl}}/api/login
 Content-Type: {{contentType}}
 
 {
-  "email": "user@example.com",
+  "email": "user2@example.com",
   "password": "securePassword123"
 }
 
@@ -30,13 +30,13 @@ GET {{baseUrl}}/api/events/1
 ### Create Event
 POST {{baseUrl}}/api/events
 Content-Type: {{contentType}}
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIyQGV4YW1wbGUuY29tIiwiZXhwIjoxNzYzNDAwNzc2LCJ1c2VySWQiOjJ9.XUbdLKPgNJj4keUJW0-aSVzN3ARL3PB7XPywv8rJ_Pw
 
 {
-  "name": "Tech Conference 2025",
+  "name": "Tech Conference 2026",
   "description": "Annual technology conference featuring latest innovations",
   "location": "San Francisco Convention Center",
-  "dateTime": "2025-12-15T09:00:00Z",
-  "userId" : 1
+  "dateTime": "2025-12-15T09:00:00Z"
 }
 
 
