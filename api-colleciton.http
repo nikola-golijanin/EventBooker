@@ -11,6 +11,16 @@ Content-Type: {{contentType}}
   "password": "securePassword123"
 }
 
+### Login User
+POST {{baseUrl}}/api/login
+Content-Type: {{contentType}}
+
+{
+  "email": "user@example.com",
+  "password": "securePassword123"
+}
+
+
 ### Get All Events
 GET {{baseUrl}}/api/events
 
