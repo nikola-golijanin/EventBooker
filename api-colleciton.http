@@ -7,7 +7,7 @@ POST {{baseUrl}}/api/signup
 Content-Type: {{contentType}}
 
 {
-  "email": "user2@example.com",
+  "email": "user@example.com",
   "password": "securePassword123"
 }
 
@@ -16,7 +16,7 @@ POST {{baseUrl}}/api/login
 Content-Type: {{contentType}}
 
 {
-  "email": "user2@example.com",
+  "email": "user@example.com",
   "password": "securePassword123"
 }
 
@@ -30,7 +30,7 @@ GET {{baseUrl}}/api/events/1
 ### Create Event
 POST {{baseUrl}}/api/events
 Content-Type: {{contentType}}
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIyQGV4YW1wbGUuY29tIiwiZXhwIjoxNzYzNzU0NjE3LCJ1c2VySWQiOjJ9.Y3VvNwNWYZkYefAY-99DdeWFfpfm3iLy1xwnpH60AfI
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3NjQwMDA2MTYsInVzZXJJZCI6MX0.d_zYojEj1uGscbtAnuOaxle11X_uSYDv0ajPLnERVaE 
 
 {
   "name": "Tech Conference 2026",
@@ -43,7 +43,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIyQGV4YW1w
 ### Update Event
 PUT {{baseUrl}}/api/events/1
 Content-Type: {{contentType}}
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIyQGV4YW1wbGUuY29tIiwiZXhwIjoxNzYzNzU0NjE3LCJ1c2VySWQiOjJ9.Y3VvNwNWYZkYefAY-99DdeWFfpfm3iLy1xwnpH60AfI
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3NjM5OTg2MDUsInVzZXJJZCI6MX0.MeciE8nGchb8Q2H8yIK802oenQJGEOFy_AU-hpGlQKw
 
 {
   "name": "Tech Conference 2025 - Updated",
@@ -54,5 +54,12 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIyQGV4YW1w
 
 ### Delete Event
 DELETE {{baseUrl}}/api/events/1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIyQGV4YW1wbGUuY29tIiwiZXhwIjoxNzYzNzU0NjE3LCJ1c2VySWQiOjJ9.Y3VvNwNWYZkYefAY-99DdeWFfpfm3iLy1xwnpH60AfI
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3NjM5OTg2MDUsInVzZXJJZCI6MX0.MeciE8nGchb8Q2H8yIK802oenQJGEOFy_AU-hpGlQKw
 
+### Register for Event
+POST {{baseUrl}}/api/events/1/register
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3NjQwMDA2MTYsInVzZXJJZCI6MX0.d_zYojEj1uGscbtAnuOaxle11X_uSYDv0ajPLnERVaE
+
+### Cancel Registration
+DELETE {{baseUrl}}/api/events/1/register
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJleHAiOjE3NjQwMDA2MTYsInVzZXJJZCI6MX0.d_zYojEj1uGscbtAnuOaxle11X_uSYDv0ajPLnERVaE
